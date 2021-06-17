@@ -23,6 +23,9 @@
         "build": {
           "builder": "ngx-build-plus:browser",
           "options": {
+            "allowedCommonJsDependencies": [
+              "gql-query-builder"
+            ],
             "extraWebpackConfig": "webpack.config.js",
             "outputPath": "dist/Tailwind",
             "index": "src/index.html",
