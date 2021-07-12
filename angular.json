@@ -21,12 +21,11 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "ngx-build-plus:browser",
+          "builder": "@angular-devkit/build-angular:browser",
           "options": {
             "allowedCommonJsDependencies": [
               "gql-query-builder"
             ],
-            "extraWebpackConfig": "webpack.config.js",
             "outputPath": "dist/Tailwind",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -76,10 +75,7 @@
           "defaultConfiguration": "production"
         },
         "serve": {
-          "builder": "ngx-build-plus:dev-server",
-          "options":{
-            "extraWebpackConfig": "webpack.config.js"
-          },
+          "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
               "browserTarget": "Tailwind:build:production"
@@ -97,9 +93,8 @@
           }
         },
         "test": {
-          "builder": "ngx-build-plus:karma",
+          "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "extraWebpackConfig": "webpack.config.js",
             "main": "src/test.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.spec.json",
